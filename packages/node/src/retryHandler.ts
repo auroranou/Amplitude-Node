@@ -107,6 +107,9 @@ export class RetryHandler implements RetryClass {
     return {
       api_key: this._apiKey,
       events,
+      options: {
+        min_id_length: 1,
+      },
     };
   }
 

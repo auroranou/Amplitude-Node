@@ -36,6 +36,11 @@ export interface Event {
   session_id?: number;
 
   groups?: { [key: string]: any };
+
+  // Optional, allowed by Amplitude HTTP API v2
+  app_version?: string;
+  os_name?: string;
+  os_version?: string;
 }
 
 /**
@@ -44,4 +49,7 @@ export interface Event {
 export interface Payload {
   api_key: string;
   events: readonly Event[];
+  options: {
+    min_id_length?: number;
+  };
 }
